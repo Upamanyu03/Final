@@ -140,11 +140,11 @@ class apicontroller extends Controller
             }
             else
             {
-                return ["invalid"=>"Password"];
+                return ["Login"=>"Invalid Password"];
             }
          }
          else{
-            return ["Not"=>"Registerd"];
+            return ["Login"=>"Not Registerd"];
          }
      }
 }
