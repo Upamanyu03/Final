@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-           <table class="table table-hover table-responsive">
+           <table  class="table-responsive table table-hover" >
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -97,8 +97,9 @@
             <tbody>
                 @foreach ($vdetails as $data )
                 <tr>
-                    <th scope="row">{{ $loop->index+1 }}</th>
-                    <td>{{ $data->name }}</td>
+                 
+                <th scope="row">{{ $loop->index+1 }}</th>
+                <td>{{ $data->name }}</td>
                     <td>{{ $data->last }}</td>
                     <td>{{ $data->email }}</td>
                     <td>{{ $data->date }}</td>
@@ -108,6 +109,7 @@
                     <td>{{ $data->kms}}/{{ $data->E}}</td>
                     <td>{{ $data->item }}</td>
                     <td>{{ $data->regular }}</td>
+                
                     <td>
                     <img src="{{ asset('front/'.$data->front) }}" class="square" width="150" height="150"/>
                     </td>
@@ -124,15 +126,15 @@
                         </a>
                     </td>
                     <td>
-                        <a href="edit/{{ $data->id }}" class="btn btn-primary btn-small">Update</a>
+                        <a href="edit/{{ $data->id }}" class="btn btn-primary btn-small">View</a>
                     </td>
                     <td>
                         <a href="del/{{ $data->id }}" class="btn btn-danger btn-small">Delete</a>
 
                     </td>
+                  
                   </tr>
-
-
+                
                 @endforeach
 
             </tbody>

@@ -10,7 +10,7 @@ class DemoController extends Controller
     {
         $vdetails=Vehicledetails::all();
         $url=url('/regi');
-        $title="Customer Registraion";
+        $title="Customer Registration";
         $data=compact('vdetails','url','title');
         return view('registration')->with($data);
     }

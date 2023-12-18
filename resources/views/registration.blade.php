@@ -51,7 +51,7 @@
         </div>
 
         <div class="card-body">
-            <a href="#" style="color: black"><-back</a><br><br>
+            <a href="{{url('/')}}/view" style="color: black"><-back</a><br><br>
             <form action="{{$url}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <label for="name" class=""> First Name: </label>
@@ -68,7 +68,7 @@
                   Customer Details:-
                   <div class="card-body">
                     <div class="form-row">
-                     <div class="form-grouUpdate Customer                   <label for="name">Vehical Number:</label>
+                     <div class="form-grouUpdate Customer"  >                 <label for="name">Vehicle Number:</label>
                        <input type="text" class="form-control" id="name" placeholder="Vehicle number" name="Vno" @if($title=="Update Customer") value="{{ $vdetails->Vno }}" @endif>
                           </div>
                       <div class="form-group col-md-6">
@@ -78,14 +78,14 @@
                 </div>
              <div class="form-group">
            <label for="name">Phone Number:</label>
-               <input type="tel" class="form-control" id="name" placeholder="0000000000" name="tel" @if($title=="Update Customer") value="{{ $vdetails->tel }}" @endif>
+               <input type="tel" class="form-control" id="name" placeholder="0000000000" name="tel" @if( $title =="Update Customer") value="{{ $vdetails->tel }}" @endif>
              </div>
                   </div>
                 </div>
                 </div>
                 <div class="card  border-dark mx-auto mb-2 p-3 " style="width: 100%;">
                     <div class="card-header ">
-                      Vehivle Inventory:-
+                    Vehicle Inventory:-
                       <div class="card-body">
 
                             <div class="form-row">
@@ -138,7 +138,7 @@
                           </div>
                           <div class="form-check form-check-inline col-md-3">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Maths" name="item[]" @if($title=="Update Customer") {{ in_array('Maths',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif>
-                            <label class="form-check-label" for="inlineCheckbox2">Maths(No field)</label>
+                            <label class="form-check-label" for="inlineCheckbox2">Mats(No field)</label>
                           </div>
 
                      </div>
@@ -153,8 +153,8 @@
 
                         <div class="form-group col-md-6 ">
                         <div class="form- group row-md-6">
-                            <label for="exampleFormControlTextarea1">Regular</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="regular"  >@if($title=="Update Customer") {{ $vdetails->regular }} @endif</textarea>
+                            
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="regular"  >@if($title=="Update Customer") {{ $vdetails->regular }} @endif</textarea>
                           </div>
                       </div>
 
