@@ -161,11 +161,11 @@
                         </a>
                     </td>
                     <td>
-                        <a href="customer/{{ $data->id }}" class="btn btn-primary btn-small">View</a>
+                        <a href="customer/{{ $data->id }}" class="btn btn-primary btn-small" > View</a>
                     </td>
                     <td>
-                        <a href="del/{{ $data->id }}" class="btn btn-danger btn-small">Delete</a>
-                    </td>
+                        <a href="del/{{ $data->id }}" class="btn btn-danger btn-small " onclick="return confirm('Are you sure Delete record?')" > Delete </a>
+                    </td>  
         </div>
                   </tr>
                 @endforeach

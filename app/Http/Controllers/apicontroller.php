@@ -147,4 +147,10 @@ class apicontroller extends Controller
             return ["Login"=>"Not Registerd"];
          }
      }
+     public function customer($id)
+     {  
+         $vdetails = Vehicledetails::find($id);
+         $data=compact('vdetails');
+         return ($data);
+     }
 }

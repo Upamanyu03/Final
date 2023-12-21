@@ -24,3 +24,4 @@ Route::PUT('/update/{id}',[apicontroller::class,('update')]);
 Route::delete('/delete/{id}',[apicontroller::class,('destroy')]);
 Route::POST('/signUp',[apicontroller::class,('register')]);
 Route::POST('/signIn',[apicontroller::class,('signIn')]);
+Route::get('/srecord/{id}',[apicontroller::class,('customer')]);

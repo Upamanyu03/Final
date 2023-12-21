@@ -51,7 +51,7 @@
         </div>
 
         <div class="card-body">
-            <a href="#" style="color: black"><-back</a><br><br>
+            <a href="{{url('/')}}/view" style="color: black"><-back</a><br><br>
             <form action="{{$url}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
