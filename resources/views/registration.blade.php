@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>{{ $title }}</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +32,7 @@
                       Admin
                     </button>
                     <div class="dropdown-menu" style="possition:absolute; transform:translate3d(700px,40px,0px); top:0px;left:0px">
-                      <a class="dropdown-item" href="{{ url('/') }}/">SignOut</a>
+                      <a class="dropdown-item" href="{{url('/')}}/">SignOut</a>
                     </div>
                   </div>
             </li>
@@ -51,9 +51,10 @@
         </div>
 
         <div class="card-body">
-            <a href="{{url('/')}}/view" style="color: black"><-back</a><br><br>
+            <a href="#" style="color: black"><-back</a><br><br>
             <form action="{{$url}}" method="POST" enctype="multipart/form-data">
                 @csrf
+
                 <label for="name" class=""> First Name: </label>
                 <input type="text" id="name" name="name" class="float-right" style="width: 80%" @if($title=="Update Customer") value="{{ $vdetails->name }}" @endif ><br><br>
                 <label for="last" class=""> Last Name: </label>
@@ -68,7 +69,7 @@
                   Customer Details:-
                   <div class="card-body">
                     <div class="form-row">
-                     <div class="form-grouUpdate Customer"  >                 <label for="name">Vehicle Number:</label>
+                     <div class="form-grouUpdate Customer                   <label for="name">Vehical Number:</label>
                        <input type="text" class="form-control" id="name" placeholder="Vehicle number" name="Vno" @if($title=="Update Customer") value="{{ $vdetails->Vno }}" @endif>
                           </div>
                       <div class="form-group col-md-6">
@@ -129,16 +130,16 @@
                             <label class="form-check-label" for="inlineCheckbox1">Battery </label>
                           </div>
                           <div class="form-check form-check-inline col-md-2">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Mirror RH" name="item[] " @if($title=="Update Customer") {{ in_array('Mirror RH',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif >
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Mirror RH" name="item[]" @if($title=="Update Customer") {{ in_array('Mirror RH',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif>
                             <label class="form-check-label" for="inlineCheckbox2">Mirror RH </label>
                           </div>
                           <div class="form-check form-check-inline col-md-2">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Mirror LH" name="item[]" @if($title=="Update Customer") {{ in_array('Mirror LH',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif>
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Mirror LH" name="item[]"@if($title=="Update Customer") {{ in_array('Mirror LH',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif>
                             <label class="form-check-label" for="inlineCheckbox1">Mirror LH</label>
                           </div>
                           <div class="form-check form-check-inline col-md-3">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Maths" name="item[]" @if($title=="Update Customer") {{ in_array('Maths',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif>
-                            <label class="form-check-label" for="inlineCheckbox2">Mats(No field)</label>
+                            <label class="form-check-label" for="inlineCheckbox2">Maths(No field)</label>
                           </div>
 
                      </div>
@@ -168,58 +169,29 @@
                             <div class="form-row">
                             <div class="form-inline col-md-4 ">
                               <label for="exampleFormControlFile1">Front</label>
-                              <input type="file" class="form-control-file" id="exampleFormControlFile1" name="front" >
-                              @if($title=="Update Customer")
-                              <td>
-                                <img src="{{ asset('front/'.$vdetails->front) }}" class="square" width="150" height="150" >
-                                </td>
-                              @endif
+                              <input type="file" class="form-control-file" id="exampleFormControlFile1" name="front">
 
                             </div>
                             <div class="form-inline col-md-4 ">
                                 <label for="exampleFormControlFile1">Right-Hand-Sied</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="right" >
-                                @if($title=="Update Customer")
-                              <td>
-                                <img src="{{ asset('right/'.$vdetails->right) }}" class="square" width="150" height="150"/>
-                                </td>
-                              @endif
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="right">
                               </div>
                               <div class="form-inline col-md-4 ">
                                 <label for="exampleFormControlFile1">left-Hand-Sied</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="left"  >
-                                @if($title=="Update Customer")
-                                <td>
-                                  <img src="{{ asset('left/'.$vdetails->left) }}" class="square" width="150" height="150" />
-                                  </td>
-                                @endif
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="left">
                               </div>
                               <div class="form-inline col-md-4 ">
                                 <label for="exampleFormControlFile1">Rear</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="rear" >
-                                @if($title=="Update Customer")
-                                <td>
-                                  <img src="{{ asset('rear/'.$vdetails->rear) }}" class="square" width="150" height="150"/>
-                                  </td>
-                                @endif
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="rear">
+
                               </div>
                               <div class="form-inline col-md-4 ">
                                   <label for="exampleFormControlFile1">DashBoard</label>
-                                  <input type="file" class="form-control-file" id="exampleFormControlFile1" name="dashbord" >
-                                  @if($title=="Update Customer")
-                                <td>
-                                  <img src="{{ asset('dashbord/'.$vdetails->dashbord) }}" class="square" width="150" height="150"/>
-                                  </td>
-                                @endif
+                                  <input type="file" class="form-control-file" id="exampleFormControlFile1" name="dashbord">
                                 </div>
                                 <div class="form-inline col-md-4 ">
                                   <label for="exampleFormControlFile1">Dicky</label>
-                                  <input type="file" class="form-control-file" id="exampleFormControlFile1" name="dickey" >
-                                  @if($title=="Update Customer")
-                                <td>
-                                  <img src="{{ asset('dickey/'.$vdetails->dickey) }}" class="square" width="150" height="150"/>
-                                  </td>
-                                @endif
+                                  <input type="file" class="form-control-file" id="exampleFormControlFile1" name="dickey">
                                 </div>
                             </div>
                     </div>

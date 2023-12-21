@@ -18,13 +18,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Product <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Product </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">labour</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cutomers</a>
+              <a class="nav-link" href="#">Cutomers <span class="sr-only">(current)</span></a>
             </li>
             <li>
                 <div class="btn-group">
@@ -32,7 +32,7 @@
                       Admin
                     </button>
                     <div class="dropdown-menu" style="possition:absolute; transform:translate3d(700px,40px,0px); top:0px;left:0px">
-                      <a class="dropdown-item" href="{{ url('/') }}/">SignOut</a>
+                      <a class="dropdown-item" href="{{url('/')}}/">SignOut</a>
                     </div>
                   </div>
             </li>
@@ -55,31 +55,65 @@
                 <button class="btn btn-success">New Customer</button>
             </a>
             </div>
-            <div class="container">
-                <div class="row m-2">
-                    <form action="" class="col-9">
-                        <div class="form-group">
-                            <input type="search"  name="search" class="form-control" value="{{$search}}" placeholder="Find by Name,Date & Vehicle NO">
-                        </div>
-                        <button class="btn btn-primary">Search</button>
-                    </form>
-                    <div class="col-3">
-                        <a href="{{url('/')}}/view">
-                        <button class="btn btn-primary d-inline-block ml-2 float-right">Reset</button>
-                        </a>
-                    </div>
-                </div>
+            <br>
+<div class="container">
+
+    <div class="row m-2">
+        <form action="" class="col-12">
+
+            <div class="form-group">
+                <input type="search"  name="search" class="form-control" value="{{$search}}" placeholder="Search by Name or Date or Vehicle number">
             </div>
            <table  class="table-responsive table table-hover" >
+            <style>
+            button.{
+                 button class="btn btn-primary">Search</button>
+        </form>
+        padding: 15px 32px;
+        <div class="col-3">
+            <a href="{{url('/')}}/show">
+            <button class="btn btn-primary d-inline-block ml-2 float-right">Reset</button>
+            </a>
+        }
+
+</style>
+
+<button class="btn btn-primary">Search</button>
+
+<button class="btn btn-primary d-inline-block ml-2 float-right">Reset</button>
+        </div>
+    </div>
+</div>
+           <br>
+           <table class="table table-hover table-responsive" style="width:100%">
             <thead>
-              <tr>
+                <style>
+                table, th, td
+                {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th,td{
+                    padding:10px;
+                }
+           table {
+            border-collapse: collapse;
+            width: 100%;
+          }
+          th, td {
+            text-align: left;
+            padding: 8px;
+          }
+          tr:nth-child(even) {background-color: #C8C8C8;}
+        </style>
+            </td> <tr>
                 <th scope="col">ID</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Create Date</th>
                 <th scope="col">Vehicle No</th>
-                <th scope="col">Vehicle Name</th>
+                <th scope="col">Vehicle Make</th>
                 <th scope="col">Phone</th>
                 <th scope="col">vehicle Inventory</th>
                 <th scope="col">Select Item</th>
@@ -91,13 +125,12 @@
                 <th scope="col">DashBord</th>
                 <th scope="col">Dickey</th>
                 <th scope="col">Action</th>
-
               </tr>
             </thead>
+            
             <tbody>
                 @foreach ($vdetails as $data )
                 <tr>
-                 
                 <th scope="row">{{ $loop->index+1 }}</th>
                 <td>{{ $data->name }}</td>
                     <td>{{ $data->last }}</td>
@@ -109,7 +142,6 @@
                     <td>{{ $data->kms}}/{{ $data->E}}</td>
                     <td>{{ $data->item }}</td>
                     <td>{{ $data->regular }}</td>
-                
                     <td>
                     <img src="{{ asset('front/'.$data->front) }}" class="square" width="150" height="150"/>
                     </td>
@@ -121,27 +153,20 @@
                     <td><img src="{{ asset('dashbord/'.$data->dashbord) }}" class="square" width="150" height="150"/></td>
                     <td><img src="{{ asset('dickey/'.$data->dickey) }}" class="square" width="150" height="150"/></td>
                     <td>
-                        <a href="">
+                        <a href="{{url('/')}}/newinvoice">
                             <button class="btn btn-primary">NewInvoice</button>
                         </a>
                     </td>
                     <td>
-                        <a href="edit/{{ $data->id }}" class="btn btn-primary btn-small">View</a>
+                        <a href="customer/{{ $data->id }}" class="btn btn-primary btn-small">View</a>
                     </td>
                     <td>
                         <a href="del/{{ $data->id }}" class="btn btn-danger btn-small">Delete</a>
-
                     </td>
-                  
                   </tr>
-                
                 @endforeach
-
             </tbody>
            </table>
-
-
-
         </div>
     </div>
     <!-- Optional JavaScript -->

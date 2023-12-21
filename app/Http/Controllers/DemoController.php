@@ -149,4 +149,12 @@ class DemoController extends Controller
     {
         return view('Invoice');
     }
+    public function customer($id)
+    {
+       
+        $vdetails = Vehicledetails::find($id);
+        $data=compact('vdetails');
+        return view('customer')->with($data);
+
+    }
 }
