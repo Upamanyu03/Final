@@ -85,7 +85,9 @@
     </div>
 </div>
            <br>
+           
            <table class="table table-hover table-responsive" style="width:100%">
+          
             <thead>
                 <style>
                 table, th, td
@@ -131,6 +133,7 @@
             <tbody>
                 @foreach ($vdetails as $data )
                 <tr>
+                <div class="card" style="width: 18rem;">
                 <th scope="row">{{ $loop->index+1 }}</th>
                 <td>{{ $data->name }}</td>
                     <td>{{ $data->last }}</td>
@@ -163,9 +166,11 @@
                     <td>
                         <a href="del/{{ $data->id }}" class="btn btn-danger btn-small">Delete</a>
                     </td>
+        </div>
                   </tr>
                 @endforeach
             </tbody>
+        
            </table>
         </div>
     </div>

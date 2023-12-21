@@ -138,10 +138,8 @@ class DemoController extends Controller
         $vdetails=Vehicledetails::all();
         $data=compact('vdetails');
         return view('firstpage')->with($data);
-
     }
     public function getToken(Request $request){
-
         $data['token'] = csrf_token();
         return json_encode($data);
     }
@@ -150,11 +148,9 @@ class DemoController extends Controller
         return view('Invoice');
     }
     public function customer($id)
-    {
-       
+    {  
         $vdetails = Vehicledetails::find($id);
         $data=compact('vdetails');
         return view('customer')->with($data);
-
     }
 }

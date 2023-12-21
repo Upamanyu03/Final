@@ -79,7 +79,19 @@
       <td><img src="{{ asset('dickey/'.$vdetails->dickey) }}" class="square" width="150" height="150"/></td>
 </tr>
 </tbody>
-</table>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"><a href="/edit/{{ $vdetails->id }}" class="btn btn-primary btn-small">Update</a></th>
+      <th scope="col"> <a href="/view" class="btn btn-success btn-small" >Back</a></th>
+</tr>
+</thead>
+
+    
+
+   
+
+
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
