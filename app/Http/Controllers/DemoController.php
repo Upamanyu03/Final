@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vehicledetails;
+use DateTime;
 class DemoController extends Controller
 {
     public function form(Request $request)
@@ -16,6 +17,27 @@ class DemoController extends Controller
     }
     public function regi(Request $request)
     {
+        $request->validate(
+            [
+                'name'=>'required',
+                'last'=>'required',
+                'email'=>'required|email',
+                'Vno'=>'required',
+                'Vmake'=>'required',
+                'tel'=>'required',
+                'kms'=>'required',
+                'E'=>'required',
+                'item'=>'required',
+                'regular'=>'required',
+                'front'=>'required',
+                'right'=>'required',
+                'left'=>'required',
+                'rear'=>'required',
+                'dashbord'=>'required',
+                'dickey'=>'required'
+            ]
+            );
+
         $frontName=time().'.'.$request->front->extension();
         $request->front->move(public_path('front'),$frontName);
         $rightName=time().'.'.$request->right->extension();
@@ -32,7 +54,8 @@ class DemoController extends Controller
         $vdetails->name=$request['name'];
         $vdetails->last=$request['last'];
         $vdetails->email=$request['email'];
-        $vdetails->date=$request['date'];
+        //$vdetails->date=$request['date'];
+        $vdetails->date=$date=new DateTime();    
         $vdetails->Vno=$request['Vno'];
         $vdetails->Vmake=$request['Vmake'];
         $vdetails->tel=$request['tel'];

@@ -41,22 +41,24 @@ class apicontroller extends Controller
         $vdetails->name=$request['name'];
         $vdetails->last=$request['last'];
         $vdetails->email=$request['email'];
-        $vdetails->date=$request['date'];
+        //$vdetails->date=$request['date'];
+        $vdetails->date=$date=new DateTime();
         $vdetails->Vno=$request['Vno'];
         $vdetails->Vmake=$request['Vmake'];
         $vdetails->tel=$request['tel'];
         $vdetails->kms=$request['kms'];
         $vdetails->E=$request['E'];
-        $vdetails->item=$request['item'];
+        //$vdetails->item=$request['item'];
         $vdetails->regular=$request['regular'];
-        $vdetails->front=$request['front'];
-        $vdetails->right=$request['right'];
-        $vdetails->left=$request['left'];
-        $vdetails->rear=$request['rear'];
-        $vdetails->dashbord=$request['dashbord'];
-        $vdetails->dickey=$request['dickey'];
+        // $vdetails->front=$request['front'];
+        // $vdetails->right=$request['right'];
+        // $vdetails->left=$request['left'];
+        // $vdetails->rear=$request['rear'];
+        // $vdetails->dashbord=$request['dashbord'];
+        // $vdetails->dickey=$request['dickey'];
         $vdetails->save();
-        return "success";
+        return ["Registered"=>"Successfully"];
+
 
     }
     public function update($id,Request $request)

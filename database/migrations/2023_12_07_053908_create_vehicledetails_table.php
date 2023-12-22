@@ -16,13 +16,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('last');
             $table->string('email');
-            $table->date('date');
+            $table->string('date');
             $table->string('Vno');
             $table->string('Vmake');
             $table->string('tel');
             $table->string('kms');
             $table->string('E');
-            $table->string('item');
+            $table->string('item')->nullable();
             $table->string('regular');
             $table->string('front')->nullable();
             $table->string('right')->nullable();
