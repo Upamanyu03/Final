@@ -51,31 +51,16 @@
         </div>
 
         <div class="card-body">
-            <a href="{{url('/')}}/view" style="color: black"><-back</a><br><br>
+            <a href="{{url('/')}}/show" style="color: black"><-back</a><br><br>
             <form action="{{$url}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <label for="name" class=""> First Name: </label>
                 <input type="text" id="name" name="name" class="float-right" style="width: 80%" @if($title=="Update Customer") value="{{ $vdetails->name }}" @endif ><br><br>
-                <spam class='text-danger'>
-                  @error('name')
-                  {{$message}}
-                  @enderror
-                </spam>
                 <label for="last" class=""> Last Name: </label>
                 <input type="text" id="name" name="last" class="float-right"  style="width: 80% "@if($title=="Update Customer") value="{{ $vdetails->last }}" @endif><br><br>
-                <spam class='text-danger'>
-                  @error('last')
-                  {{$message}}
-                  @enderror
-                </spam>
                 <label for="email">Email: </label>
                 <input type="email" id="email" name="email" class="float-right" style="width: 80%"@if($title=="Update Customer") value="{{ $vdetails->email }}" @endif><br><br>
-                <spam class='text-danger'>
-                  @error('email')
-                  {{$message}}
-                  @enderror
-                </spam>
                 <label for="date">Create Date : </label>
                 <input type="date" id="start" name="date" min="1900-01-01" max="3000-01-01" class="float-right" style="width: 80%" @if($title=="Update Customer") value={{ $vdetails->date }} @endif><br><br>
 
@@ -84,55 +69,34 @@
                   Customer Details:-
                   <div class="card-body">
                     <div class="form-row">
-                     <div class="form-grouUpdate Customer                   <label for="name">Vehical Number:</label>
+                     <div class="form-grouUpdate Customer "></div><label for="name">Vehical Number:</label>
                        <input type="text" class="form-control" id="name" placeholder="Vehicle number" name="Vno" @if($title=="Update Customer") value="{{ $vdetails->Vno }}" @endif>
-                       <spam class='text-danger'>
-                        @error("Vno")
-                        {{$message}}
-                        @enderror
-                       </spam>
                           </div>
                       <div class="form-group col-md-6">
                      <label for="name">Vehicle Make: </label>
                      <input type="text" class="form-control" id="name" placeholder="Vehical Make" name="Vmake" @if($title=="Update Customer") value="{{ $vdetails->Vmake }}" @endif>
-                     <spam class='text-danger'>
-                      @error("Vmake")
-                      {{$message}}
-                      @enderror
-                     </spam>
                    </div>
                 </div>
              <div class="form-group">
            <label for="name">Phone Number:</label>
-               <input type="tel" class="form-control" id="name" placeholder="0000000000" name="tel" @if( $title =="Update Customer") value="{{ $vdetails->tel }}" @endif>
-               <spam class='text-danger'>
-                @error("tel")
-                {{$message}}
-                @enderror
-               </spam>
+               <input type="tel" class="form-control" id="name" placeholder="0000000000" name="tel" @if($title=="Update Customer") value="{{ $vdetails->tel }}" @endif>
              </div>
                   </div>
                 </div>
                 </div>
                 <div class="card  border-dark mx-auto mb-2 p-3 " style="width: 100%;">
                     <div class="card-header ">
-                    Vehicle Inventory:-
+                      Vehivle Inventory:-
                       <div class="card-body">
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                    <label for="name">Kms :</label>
                                   <input type="text" class="form-control" id="name" placeholder="Vehicle number" name='kms' @if($title=="Update Customer") value="{{ $vdetails->kms }}" @endif>
-                                  <spam class='text-danger'>
-                                    @error("kms")
-                                    {{$message}}
-                                    @enderror
-                                  </spam>
                                      </div>
                                      <div class="form-group col-md-6">
                                         <label for="inputState">Fuel</label>
                                         <select id="inputState" class="form-control" value='E' name="E" @if($title=="Update Customer") value="{{ $vdetails->E }}" @endif>
-                                        
                                           <option selected>E</option>
                                           <option>...</option>
                                         </select>
@@ -174,8 +138,8 @@
                             <label class="form-check-label" for="inlineCheckbox1">Mirror LH</label>
                           </div>
                           <div class="form-check form-check-inline col-md-3">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Maths" name="item[]" @if($title=="Update Customer") {{ in_array('Maths',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif>
-                            <label class="form-check-label" for="inlineCheckbox2">Maths(No field)</label>
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Maths" name="item[]" @if($title=="Update Customer") {{ in_array('Maths(No field)',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif>
+                            <label class="form-check-label" for="inlineCheckbox2">Mat(No field)</label>
                           </div>
 
                      </div>
@@ -190,13 +154,8 @@
 
                         <div class="form-group col-md-6 ">
                         <div class="form- group row-md-6">
-                            
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="regular" placeholder="Regular" >@if($title=="Update Customer") {{ $vdetails->regular }} @endif</textarea>
-                            <spam class='text-danger'>
-                              @error("regular")
-                              {{$message}}
-                              @enderror
-                            </spam>
+                            <label for="exampleFormControlTextarea1">Regular</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="regular"  >@if($title=="Update Customer") {{ $vdetails->regular }} @endif</textarea>
                           </div>
                       </div>
 
@@ -211,58 +170,28 @@
                             <div class="form-inline col-md-4 ">
                               <label for="exampleFormControlFile1">Front</label>
                               <input type="file" class="form-control-file" id="exampleFormControlFile1" name="front">
-                              <spam class='text-danger'>
-                                @error("front")
-                                {{$message}}
-                                @enderror
-                              </spam>
 
                             </div>
                             <div class="form-inline col-md-4 ">
                                 <label for="exampleFormControlFile1">Right-Hand-Sied</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="right">
-                                <spam class='text-danger'>
-                                  @error("right")
-                                  {{$message}}
-                                  @enderror
-                                </spam>
                               </div>
                               <div class="form-inline col-md-4 ">
                                 <label for="exampleFormControlFile1">left-Hand-Sied</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="left">
-                                <spam class='text-danger'>
-                                  @error("left")
-                                  {{$message}}
-                                  @enderror
-                                </spam>
                               </div>
                               <div class="form-inline col-md-4 ">
                                 <label for="exampleFormControlFile1">Rear</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="rear">
-                                <spam class='text-danger'>
-                                  @error("rear")
-                                  {{$message}}
-                                  @enderror
-                                </spam>
 
                               </div>
                               <div class="form-inline col-md-4 ">
                                   <label for="exampleFormControlFile1">DashBoard</label>
                                   <input type="file" class="form-control-file" id="exampleFormControlFile1" name="dashbord">
-                                  <spam class='text-danger'>
-                                    @error("dashbord")
-                                    {{$message}}
-                                    @enderror
-                                  </spam>
                                 </div>
                                 <div class="form-inline col-md-4 ">
                                   <label for="exampleFormControlFile1">Dicky</label>
                                   <input type="file" class="form-control-file" id="exampleFormControlFile1" name="dickey">
-                                  <spam class='text-danger'>
-                                    @error("dickey")
-                                    {{$message}}
-                                    @enderror
-                                  </spam>
                                 </div>
                             </div>
                     </div>
