@@ -21,7 +21,7 @@
               <a class="nav-link" href="#">Product </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">labour</a>
+              <a class="nav-link" href="{{url('/')}}/addlabour">labour</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Cutomers <span class="sr-only">(current)</span></a>
