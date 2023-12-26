@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Customer</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">|| Vehicle-Workshop ||</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,14 +18,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="{{url('/')}}/viewproduct">Product </a>
-            </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('/')}}/viewlabour">labour</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Cutomers <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{url('/')}}/viewlabour">labour <span class="sr-only">(current)</span></a>
             </li>
             <li>
                 <div class="btn-group">
@@ -38,6 +33,7 @@
             </li>
           </ul>
         </div>
+
     </nav>
     @if($message=Session::get('success'))
     <div class='alert alert-success alert-block'>
@@ -45,54 +41,53 @@
     </div>
     @endif
       <br><br>
-      <table>
-       
-      <tr> <th scope="col">First Name:</th> <td>{{ $vdetails->name }}</td></tr>
-      <tr>   <th scope="col">Last Name:</th><td>{{ $vdetails->last}}</td></tr>
-      <tr>    <th scope="col">Email:</th><td>{{ $vdetails->email }}</td></tr>
-      <tr>        <th scope="col">Create Date:</th><td>{{ $vdetails->date }}</td></tr>
-      <tr>        <th scope="col">Vehicle No:</th><td>{{ $vdetails->Vno }}</td></tr>
-      <tr>       <th scope="col">Vehicle Make:</th><td>{{ $vdetails->Vmake }}</td></tr>
-      <tr>        <th scope="col">Phone:</th><td>{{ $vdetails->tel }}</td></tr>
-      <tr>        <th scope="col">Vehicle Inventory:</th><td>{{ $vdetails->kms}}/{{ $vdetails->E}}</td>
-      <tr>        <th scope="col">Select Item:</th> <td>{{ $vdetails->item }}</td>
-      <tr>        <th scope="col">Complaint:</th><td>{{ $vdetails->regular }}</td>
-      </table>
-      <table class="table table-responsive">
-  <thead>
-    <tr>
-    <th scope="col">Front View</th>
-    <th scope="col">Right View</th>
-    <th scope="col">Left view</th>
-    <th scope="col">Rear View</th>
-    <th scope="col">DashBord</th>
-    <th scope="col">Dickey</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><img src="{{ asset('front/'.$vdetails->front) }}" class="square" width="150" height="150"/></td>
-      <td><img src="{{ asset('right/'.$vdetails->right) }}" class="square" width="150" height="150"/></td>
-      <td><img src="{{ asset('left/'.$vdetails->left) }}" class="square" width="150" height="150"/></td>
-      <td><img src="{{ asset('rear/'.$vdetails->rear) }}" class="square" width="150" height="150"/></td>
-      <td><img src="{{ asset('dashbord/'.$vdetails->dashbord) }}" class="square" width="150" height="150"/></td>
-      <td><img src="{{ asset('dickey/'.$vdetails->dickey) }}" class="square" width="150" height="150"/></td>
-</tr>
-</tbody>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col"><a href="/edit/{{ $vdetails->id }}" class="btn btn-primary btn-small">Update</a></th>
-      <th scope="col"> <a href="/view" class="btn btn-success btn-small" >Back</a></th>
-</tr>
-</thead>
+    <div class="card  border-dark mx-auto mb-2 p-3 " style="width: 75%;">
+        <div class="card-header bg-dark text-white">
+          <h5><b>Labour List</b></h5>
+        </div>
+        <div class="card-body">
+            <div class="text-center">
+            <a href="{{url('/')}}/addlabour">
+                <button class="btn btn-success">New Labour</button>
+            </a>
+            </div>
+            <br>
 
-    
+           <br>
 
-   
+           <table class="table table-hover table-responsive" style="width:100%">
+
+            <thead>
+               
+         </td> <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Labour</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($labour as $data )
+                <tr>
+                <div class="card" style="width: 18rem;">
+                <th scope="row">{{ $loop->index+1 }}</th>
+                <td>{{ $data->l_name }}</td>
+                <td>{{ $data->l_price }}</td>
+                <td>
+                <a href="del/{{ $data->id }}" class="btn btn-danger btn-small " onclick="return confirm('Are you sure Delete record?')">Delete</a>
+                <a href="edit1/{{ $data->id }}" class="btn btn-primary btn-small" >Edit</a></td>
+        </div>
+                  </tr>
+                @endforeach
+            </tbody>
 
 
-      
+
+
+
+
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
