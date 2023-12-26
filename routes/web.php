@@ -29,6 +29,9 @@ Route::get('/get-token',[DemoController::class,('getToken')]);
 Route::POST('/signIn',[signinController::class,('signIn')]);
 Route::get('/invoice',[DemoController::class,('invoice')]);
 Route::get('/customer/{id}',[DemoController::class,('customer')]);
-//Route::get('/addproduct',[])
-Route::get('/addlabour',[LabourController::class,('labour')]);
-Route::POST('/addlabour',[LabourController::class,('addlabour')]);
+Route::get('/addproduct',[ProductController::class,('addProduct')]);
+Route::POST('/addproduct',[ProductController::class,('insert')]);
+Route::get('/viewproduct',[ProductController::class,('viewproduct')]);
+Route::get('/productdelete/{id}',[ProductController::class,('destroy')]);
+Route::get('/productedit/{id}',[ProductController::class,('productedit')]);
+Route::post('/productupdate/{id}',[ProductController::class,('productupdate')]);
