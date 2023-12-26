@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\signinController;
+use App\Http\Controllers\LabourController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,5 @@ Route::POST('/signIn',[signinController::class,('signIn')]);
 Route::get('/invoice',[DemoController::class,('invoice')]);
 Route::get('/customer/{id}',[DemoController::class,('customer')]);
 //Route::get('/addproduct',[])
+Route::get('/addlabour',[LabourController::class,('labour')]);
+Route::POST('/addlabour',[LabourController::class,('addlabour')]);

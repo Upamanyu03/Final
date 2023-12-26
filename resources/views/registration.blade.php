@@ -21,7 +21,7 @@
               <a class="nav-link" href="#">Product <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">labour</a>
+              <a class="nav-link" href="{{url('/')}}/addlabour">labour</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Cutomers</a>
@@ -56,26 +56,29 @@
                 @csrf
 
                 <label for="name" class=""> First Name: </label>
-                <input type="text" id="name" name="name" class="float-right" style="width: 80%" @if($title=="Update Customer") value="{{ $vdetails->name }}" @endif ><br><br>
-                <spam class='text-danger'>
+                <input type="text" id="name" name="name" class="float-right" style="width: 80%" @if($title=="Update Customer") value="{{ $vdetails->name }}" @endif >
+                <br><spam class='text-danger'>
                   @error('name')
                   {{$message}}
                   @enderror
                 </spam>
+                <br>
                 <label for="last" class=""> Last Name: </label>
-                <input type="text" id="name" name="last" class="float-right"  style="width: 80% "@if($title=="Update Customer") value="{{ $vdetails->last }}" @endif><br><br>
-                <spam class='text-danger'>
+                <input type="text" id="name" name="last" class="float-right"  style="width: 80% "@if($title=="Update Customer") value="{{ $vdetails->last }}" @endif>
+                <br><spam class='text-danger'>
                   @error('last')
                   {{$message}}
                   @enderror
                 </spam>
+                <br>
                 <label for="email">Email: </label>
-                <input type="email" id="email" name="email" class="float-right" style="width: 80%"@if($title=="Update Customer") value="{{ $vdetails->email }}" @endif><br><br>
-                <spam class='text-danger'>
+                <input type="email" id="email" name="email" class="float-right" style="width: 80%"@if($title=="Update Customer") value="{{ $vdetails->email }}" @endif>
+                <br><spam class='text-danger'>
                   @error('email')
                   {{$message}}
                   @enderror
                 </spam>
+                <br>
                 <label for="date">Create Date : </label>
                 <input type="date" id="start" name="date" min="1900-01-01" max="3000-01-01" class="float-right" style="width: 80%" @if($title=="Update Customer") value={{ $vdetails->date }} @endif><br><br>
 
