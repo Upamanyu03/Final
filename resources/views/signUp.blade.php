@@ -84,24 +84,22 @@
                           </div>
                         </div>
 
-                        <div class="form-check d-flex justify-content-center mb-5">
-                          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                          <label class="form-check-label" for="form2Example3"> I agree all statements in <a href="#!">Terms of service</a></label>
+                        <div class="form-check d-flex justify-content-center mb-5"><div class="form-group form-check">
+                            <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="exampleCheck"
+                            />
+                            <label
+                                class="form-check-label"
+                                for="exampleCheck"
+                            >I agree to the <a href="/terms-of-service">terms of service</a></label>
                         </div>
 
                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                             <button type="submit" class="btn btn-primary"> Register </button>
                         </div>
-
-                      </form>
-
-                    </div>
-                    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                        class="img-fluid" alt="Sample image">
-
-                    </div>
+ </form>
                   </div>
                 </div>
               </div>
