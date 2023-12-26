@@ -9,8 +9,13 @@ use App\Models\Labour;
 class LabourController extends Controller
 {
     public function labour()
-    {
-        return view('labour.labour');
+    {   
+        $labour=Labour::all();
+        $url=url('/addlabour');
+        $title="Create Labour";
+        $data = compact('labour','url','title');
+        return view('labour.labour')->with($data);
+        
     }
 
     public function addlabour(Request $request)
