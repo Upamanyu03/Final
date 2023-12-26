@@ -41,8 +41,8 @@ class apicontroller extends Controller
         $vdetails->name=$request['name'];
         $vdetails->last=$request['last'];
         $vdetails->email=$request['email'];
-        //$vdetails->date=$request['date'];
-        $vdetails->date=$date=new DateTime();
+        $vdetails->date=$request['date'];
+        //$vdetails->date=$date=new DateTime();
         $vdetails->Vno=$request['Vno'];
         $vdetails->Vmake=$request['Vmake'];
         $vdetails->tel=$request['tel'];

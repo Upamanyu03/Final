@@ -28,3 +28,4 @@ Route::get('/get-token',[DemoController::class,('getToken')]);
 Route::POST('/signIn',[signinController::class,('signIn')]);
 Route::get('/invoice',[DemoController::class,('invoice')]);
 Route::get('/customer/{id}',[DemoController::class,('customer')]);
+//Route::get('/addproduct',[])

@@ -37,7 +37,6 @@ class DemoController extends Controller
                 'dickey'=>'required'
             ]
             );
-
         $frontName=time().'.'.$request->front->extension();
         $request->front->move(public_path('front'),$frontName);
         $rightName=time().'.'.$request->right->extension();
