@@ -18,13 +18,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Product <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{url('/')}}/viewproduct">Product <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">labour</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cutomers</a>
+              <a class="nav-link" href="">Cutomers</a>
             </li>
             <li>
                 <div class="btn-group">
@@ -47,14 +47,19 @@
       <br><br>
     <div class="card  border-dark mx-auto mb-2 p-3 " style="width: 75%;">
         <div class="card-header bg-success text-white">
-          <h4>{{ $title }}</h4>
+          <h4>{{$title}}</h4>
         </div>
 
         <div class="card-body">
-            <a href="{{url('/')}}/view" style="color: black"><-back</a><br><br>
+            <a href="#" style="color: black"><-back</a><br><br>
             <form action="{{$url}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                
+                <label for="name" class=""> Product Name: </label>
+                <input type="text" id="l_name" name="Product" class="float-right" style="width: 80%" @if($title=="Update Product") value="{{ $product->Product }}" @endif><br><br>
+                <label for="last" class=""> Price: </label>
+                <input type="text" id="l_price" name="Price" class="float-right"  style="width: 80% "@if($title=="Update Product") value="{{ $product->Price }}" @endif><br><br>
+                <button class="btn btn-primary btn-block" type="submit"> Submit</button>
+
             </form>
         </div>
     </div> 

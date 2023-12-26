@@ -30,3 +30,8 @@ Route::POST('/signIn',[signinController::class,('signIn')]);
 Route::get('/invoice',[DemoController::class,('invoice')]);
 Route::get('/customer/{id}',[DemoController::class,('customer')]);
 Route::get('/addproduct',[ProductController::class,('addProduct')]);
+Route::POST('/addproduct',[ProductController::class,('insert')]);
+Route::get('/viewproduct',[ProductController::class,('viewproduct')]);
+Route::get('/productdelete/{id}',[ProductController::class,('destroy')]);
+Route::get('/productedit/{id}',[ProductController::class,('productedit')]);
+Route::post('/productupdate/{id}',[ProductController::class,('productupdate')]);

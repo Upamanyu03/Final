@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Product </a>
+              <a class="nav-link" href="{{url('/')}}/viewproduct">Product </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{url('/')}}/addlabour">labour</a>
