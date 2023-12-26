@@ -32,3 +32,10 @@ Route::get('/customer/{id}',[DemoController::class,('customer')]);
 //Route::get('/addproduct',[])
 Route::get('/addlabour',[LabourController::class,('labour')]);
 Route::POST('/addlabour',[LabourController::class,('addlabour')]);
+Route::get('/viewlabour',[LabourController::class,('labourview')]);
+Route::get('/del/{id}',[LabourController::class,('destroy')]);
+Route::get('/edit1/{id}',[LabourController::class,('edit1')]);
+Route::POST('/update1/{id}',[LabourController::class,('update1')]);
+
+
+

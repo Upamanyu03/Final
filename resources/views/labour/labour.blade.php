@@ -52,12 +52,13 @@
 
         <div class="card-body">
             <a href="{{url('/')}}/labour" style="color: black"><-back</a><br><br>
-            <form action="{{ url('/') }}/addlabour" method="POST" >
+            <form action="{{$url}}" method="POST" >
                 @csrf
                 <label for="name" class=""> Labour Name: </label>
-                <input type="text" id="l_name" name="l_name" class="float-right" style="width: 80%" ><br><br>
-                <label for="last" class=""> Price: </label>
-                <input type="text" id="l_price" name="l_price" class="float-right"  style="width: 80% "><br><br>
+               
+                 <input type="text" id="l_name" name="l_name" class="float-right" style="width:80%"  @if($title == "Upadte Labour") value="{{ $labour->l_name }}" @endif><br><br>
+                 <label for="last" class=""> Price: </label>
+                <input type="text" id="l_price" name="l_price" class="float-right" style="width:80%" @if($title == "Upadte Labour") value="{{ $labour->l_price }}" @endif ><br><br>
                 <button class="btn btn-primary btn-block" type="submit"> Submit</button>
               
               </form>
