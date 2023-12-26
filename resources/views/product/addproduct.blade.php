@@ -54,6 +54,7 @@
             <a href="{{url('/')}}/view" style="color: black"><-back</a><br><br>
             <form action="{{$url}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                
             </form>
         </div>
     </div> 

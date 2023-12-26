@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\signinController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +29,4 @@ Route::get('/get-token',[DemoController::class,('getToken')]);
 Route::POST('/signIn',[signinController::class,('signIn')]);
 Route::get('/invoice',[DemoController::class,('invoice')]);
 Route::get('/customer/{id}',[DemoController::class,('customer')]);
-//Route::get('/addproduct',[])
+Route::get('/addproduct',[ProductController::class,('addProduct')]);
