@@ -58,6 +58,7 @@
            <table class="table table-hover table-responsive" style="width:100%">
 
             <thead>
+            <table class="table table-bordered table-striped text-center">
                
          </td> <tr>
                 <th scope="col">ID</th>
@@ -80,14 +81,6 @@
                   </tr>
                 @endforeach
             </tbody>
-
-
-
-
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
