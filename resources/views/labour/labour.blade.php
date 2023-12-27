@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Product <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="viewproduct">Product <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">labour</a>

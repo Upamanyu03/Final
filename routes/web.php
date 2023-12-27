@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DemoController;
 use App\Http\Controllers\signinController;
-use App\Http\Controllers\LabourController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,13 +29,9 @@ Route::get('/get-token',[DemoController::class,('getToken')]);
 Route::POST('/signIn',[signinController::class,('signIn')]);
 Route::get('/invoice',[DemoController::class,('invoice')]);
 Route::get('/customer/{id}',[DemoController::class,('customer')]);
-//Route::get('/addproduct',[])
-Route::get('/addlabour',[LabourController::class,('labour')]);
-Route::POST('/addlabour',[LabourController::class,('addlabour')]);
-Route::get('/viewlabour',[LabourController::class,('labourview')]);
-Route::get('/del/{id}',[LabourController::class,('destroy')]);
-Route::get('/edit1/{id}',[LabourController::class,('edit1')]);
-Route::POST('/update1/{id}',[LabourController::class,('update1')]);
-
-
-
+Route::get('/addproduct',[ProductController::class,('addProduct')]);
+Route::POST('/addproduct',[ProductController::class,('insert')]);
+Route::get('/viewproduct',[ProductController::class,('viewproduct')]);
+Route::get('/productdelete/{id}',[ProductController::class,('destroy')]);
+Route::get('/productedit/{id}',[ProductController::class,('productedit')]);
+Route::post('/productupdate/{id}',[ProductController::class,('productupdate')]);
