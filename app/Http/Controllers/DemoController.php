@@ -165,9 +165,12 @@ class DemoController extends Controller
         $data['token'] = csrf_token();
         return json_encode($data);
     }
-    public function invoice()
+    public function invoice($id)
     {
-        return view('Invoice');
+        $vdetails = Vehicledetails::find($id);
+        $data=compact('vdetails');
+        return view('Invoice')->with($data);
+        
     }
     public function customer($id)
     {  

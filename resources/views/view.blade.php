@@ -157,15 +157,10 @@
                     <td><img src="{{ asset('dickey/'.$data->dickey) }}" class="square" width="150" height="150"/></td>
                     <td>
 
-                        <a href="{{url('/')}}/newinvoice">
-                            <button class="btn btn-primary">NewInvoice</button>
-                        </a>
-                        <br><br>
-
-                        <a href="customer/{{ $data->id }}" class="btn btn-primary btn-small" > View</a>
-                         <br><br>
-                        <a href="del/{{ $data->id }}" class="btn btn-danger btn-small " onclick="return confirm('Are you sure Delete record?')" > Delete </a>
-
+                    <a href="newinvoice/{{ $data->id }}" class="btn btn-primary btn-small" > New Invoice</a>
+                    <a href="customer/{{ $data->id }}" class="btn btn-primary btn-small" > View</a>
+                    <a href="del/{{ $data->id }}" class="btn btn-danger btn-small " onclick="return confirm('Are you sure Delete record?')" > Delete </a>
+                  </td>
         </div>
                   </tr>
                 @endforeach

@@ -49,7 +49,7 @@
             <form action="#" method="POST" enctype="multipart/form-data">
                 @csrf
                 <label for="name" class=""> Customer: </label>
-                <input type="text" id="name" name="name" class="float-right" style="width: 80%" ><br><br>
+                <input type="text" id="name" name="name" class="float-right" style="width: 80%" value="{{ $vdetails->name }}" ><br><br>
                 <label for="last" class=""> Discription: </label>
                 <input type="text" id="name" name="last" class="float-right"  style="width: 80% "><br><br>
                 <label for="">Observation</label>
