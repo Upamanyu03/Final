@@ -9,13 +9,15 @@ class ProductController extends Controller
     public function addProduct()
     {
         $product=Product::all();
-        $url=url('/insert');
+        $url=url('/addproduct');
         $title="Add Product";
         $data=compact('product','url','title');
         return view('product.addproduct')->with($data);
     }
     public function insert(Request $request)
     {
+        // echo "<pre>";
+        // print_r($request->all());
         $product=new Product();
         $product->Product=$request['Product'];
         $product->Price=$request['Price'];

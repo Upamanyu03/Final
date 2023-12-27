@@ -52,7 +52,7 @@
 
         <div class="card-body">
             <a href="#" style="color: black"><-back</a><br><br>
-            <form action="{{$url}}" method="POST" enctype="multipart/form-data">
+            <form action="{{$url}}" method="POST" >
                 @csrf
                 <label for="name" class=""> Product Name: </label>
                 <input type="text" id="l_name" name="Product" class="float-right" style="width: 80%" @if($title=="Update Product") value="{{ $product->Product }}" @endif><br><br>
