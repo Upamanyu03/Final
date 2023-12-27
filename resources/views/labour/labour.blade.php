@@ -21,10 +21,10 @@
               <a class="nav-link" href="viewproduct">Product <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">labour</a>
+              <a class="nav-link" href="viewlabour">labour</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cutomers</a>
+              <a class="nav-link" href="view">Cutomers</a>
             </li>
             <li>
                 <div class="btn-group">

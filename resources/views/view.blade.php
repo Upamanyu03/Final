@@ -21,10 +21,10 @@
               <a class="nav-link" href="{{url('/')}}/viewproduct">Product </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('/')}}/viewlabour">labour</a>
+              <a class="nav-link" href="viewlabour">labour</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Cutomers <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="view">Cutomers <span class="sr-only">(current)</span></a>
             </li>
             <li>
                 <div class="btn-group">
