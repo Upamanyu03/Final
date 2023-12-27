@@ -56,19 +56,19 @@
             </a>
             </div>
             <br>
-<div class="container">
+ <!--<div class="container">
 
     <div class="row m-2">
         <form action="" class="col-12">
 
-            <div class="form-group">
+             <div class="form-group">
                 <input type="search"  name="search" class="form-control" value="" placeholder="Search by Name or Date or Vehicle number">
-            </div>
+            </div> 
            <table  class="table-responsive table table-hover" >
             <style>
             button.{
                  button class="btn btn-primary">Search</button>
-        </form>
+        </form> 
         padding: 15px 32px;
         <div class="col-3">
             <a href="{{url('/')}}/show">
@@ -83,7 +83,7 @@
 <button class="btn btn-primary d-inline-block ml-2 float-right">Reset</button>
         </div>
     </div>
-</div>
+</div>-->
            <br>
 
            <table class=" table table-hover table-responsive"  >
