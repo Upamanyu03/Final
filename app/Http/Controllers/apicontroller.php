@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Vehicledetails;
 use App\Models\signin;
+use App\Models\Product;
+use App\Models\Labour;
+
 class apicontroller extends Controller
 {
     public function search(Request $request)
@@ -155,4 +158,63 @@ class apicontroller extends Controller
          $data=compact('vdetails');
          return ($data);
      }
+     public function insert(Request $request)
+     {
+         $product=new Product();
+         $product->Product=$request['Product'];
+         $product->Price=$request['Price'];
+         $product->save();
+         return ('Product Added !!');
+     }
+     public function viewproduct()
+     {
+         $productDetails=Product::all();
+         $data=compact('productDetails');
+         return ($data);
+     }
+     public function addlabour(Request $request)
+     {
+        $labour=new Labour();
+        $labour->l_name=$request['l_name'];
+        $labour->l_price=$request['l_price'];
+        $labour->save();
+        return ("SuccessFully Added");
+     }
+     public function labourview()
+     {
+         $labourdetails=Labour::all();
+         $data=compact('labourdetails');
+         return ($data);
+     }
+     public function productdestroy($id)
+    {
+        $product=Product::where('id',$id)->first();
+        $product->delete();
+        return ('Product Deleted');
+    }
+    public function labourdestroy($id)
+    {
+        $labour=Labour::where('id',$id)->first();
+        $labour->delete();
+        return ('Labour Deleted');
+    }
+    public function productupdate($id,Request $request)
+    {
+        $product = Product::find($id);
+        $product->Product=$request['Product'];
+        $product->Price=$request['Price'];
+        $product->save();
+        return ('Product Updated');
+    }
+    public function update1($id,Request $request)
+    {   
+        $labour = Labour::find($id);
+        $labour->l_name=$request['l_name'];
+        $labour->l_price=$request['l_price'];
+        $labour->save();
+        return ('Labour Updated');
+
+    }   
+     
+
 }

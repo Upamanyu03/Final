@@ -16,8 +16,7 @@ class ProductController extends Controller
     }
     public function insert(Request $request)
     {
-        // echo "<pre>";
-        // print_r($request->all());
+
         $product=new Product();
         $product->Product=$request['Product'];
         $product->Price=$request['Price'];

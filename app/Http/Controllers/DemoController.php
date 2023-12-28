@@ -178,4 +178,5 @@ class DemoController extends Controller
         $data=compact('vdetails');
         return view('customer')->with($data);
     }
+    
 }
