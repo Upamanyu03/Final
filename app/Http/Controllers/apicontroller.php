@@ -7,7 +7,7 @@ use App\Models\Vehicledetails;
 use App\Models\Product;
 use App\Models\Labour;
 use App\Models\User;
-use Illuminate\Support\facades\Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class apicontroller extends Controller
