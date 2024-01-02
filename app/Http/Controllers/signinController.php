@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\signin;
+use App\Models\User;
 use Illuminate\Support\facades\Auth;
-use Hash;
+use Illuminate\Support\Facades\Hash;
+
 class signinController extends Controller
 {
     public function sign()
@@ -28,10 +29,10 @@ class signinController extends Controller
 
             ]
             );
-         $sign=new signin();
+         $sign=new User();
          $sign->name=$request['name'];
          $sign->email=$request['email'];
-         $sign->password=$request['password'];
+         $sign->password=Hash::make($request['password']);
          $sign->save();
          return redirect('/sign')->withSuccess("SuccessFully Registerd");
      }
@@ -44,20 +45,30 @@ class signinController extends Controller
                 'password'=>'required'
             ]
             );
-         $sign= signin::where('email','=',$request->email)->first();
-         if($sign){
-            if(($sign->password)==($request->password))
+
+            $credentials=$request->only('email','password');
+            if(Auth::attempt( $credentials))
             {
                 return redirect('/view');
             }
             else
             {
-                return back()->withSuccess('Invalid Password');
+                return back()->withSuccess('Invalid user Id or Password');
             }
-         }
-         else{
-            return back()->withSuccess('The Email id not registerd');
-         }
+        //  $sign= signin::where('email','=',$request->email)->first();
+        //  if($sign){
+        //     if(($sign->password)==($request->password))
+        //     {
+        //         return redirect('/view');
+        //     }
+        //     else
+        //     {
+        //         return back()->withSuccess('Invalid Password');
+        //     }
+        //  }
+        //  else{
+        //     return back()->withSuccess('The Email id not registerd');
+        //  }
 
 
      }

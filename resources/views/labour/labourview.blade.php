@@ -75,7 +75,7 @@
                 <td>{{ $data->l_name }}</td>
                 <td>{{ $data->l_price }}</td>
                 <td>
-                <a href="del/{{ $data->id }}" class="btn btn-danger btn-small " onclick="return confirm('Are you sure Delete record?')">Delete</a>
+                <a href="labordel/{{ $data->id }}" class="btn btn-danger btn-small " onclick="return confirm('Are you sure Delete record?')">Delete</a>
                 <a href="edit1/{{ $data->id }}" class="btn btn-primary btn-small" >Edit</a></td>
         </div>
                   </tr>

@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vehicledetails;
-use App\Models\signin;
 use App\Models\Product;
 use App\Models\Labour;
+use App\Models\User;
+use Illuminate\Support\facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class apicontroller extends Controller
 {
@@ -51,7 +53,8 @@ class apicontroller extends Controller
         $vdetails->tel=$request['tel'];
         $vdetails->kms=$request['kms'];
         $vdetails->E=$request['E'];
-        //$vdetails->item=$request['item'];
+        $checkbox_data=$request->input('item');
+        $vdetails->item=implode(',',$checkbox_data);
         $vdetails->regular=$request['regular'];
         // $vdetails->front=$request['front'];
         // $vdetails->right=$request['right'];
@@ -121,7 +124,7 @@ class apicontroller extends Controller
 
             ]
             );
-         $sign=new signin();
+         $sign=new User();
          $sign->name=$request['name'];
          $sign->email=$request['email'];
          $sign->password=$request['password'];
@@ -137,9 +140,8 @@ class apicontroller extends Controller
                 'password'=>'required'
             ]
             );
-         $sign= signin::where('email','=',$request->email)->first();
-         if($sign){
-            if(($sign->password)==($request->password))
+            $credentials=$request->only('email','password');
+            if(Auth::attempt( $credentials))
             {
                 return ["Login"=>"successfully"];
             }
@@ -147,10 +149,20 @@ class apicontroller extends Controller
             {
                 return ["Login"=>"Invalid Password"];
             }
-         }
-         else{
-            return ["Login"=>"Not Registerd"];
-         }
+        //  $sign= signin::where('email','=',$request->email)->first();
+        //  if($sign){
+        //     if(($sign->password)==($request->password))
+        //     {
+        //         return ["Login"=>"successfully"];
+        //     }
+        //     else
+        //     {
+        //         return ["Login"=>"Invalid Password"];
+        //     }
+        //  }
+        //  else{
+        //     return ["Login"=>"Not Registerd"];
+        //  }
      }
      public function customer($id)
      {  
