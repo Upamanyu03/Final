@@ -45,7 +45,7 @@
     </div>
     @endif
       <br><br>
-    <div class="card  border-dark mx-auto mb-2 p-3 " style="width: 50%;">
+    <div class="card  border-dark mx-auto mb-2 p-3 " style="width: 75%;">
         <div class="card-header bg-dark text-white">
           <h5><b>Customer List</b></h5>
         </div>
@@ -56,59 +56,16 @@
             </a>
             </div>
             <br>
- <!--<div class="container">
-
-    <div class="row m-2">
-        <form action="" class="col-12">
-
-             <div class="form-group">
-                <input type="search"  name="search" class="form-control" value="" placeholder="Search by Name or Date or Vehicle number">
-            </div> 
-           <table  class="table-responsive table table-hover" >
-            <style>
-            button.{
-                 button class="btn btn-primary">Search</button>
-        </form> 
-        padding: 15px 32px;
-        <div class="col-3">
-            <a href="{{url('/')}}/show">
-            <button class="btn btn-primary d-inline-block ml-2 float-right">Reset</button>
-            </a>
-        }
-
-</style>
-
-<button class="btn btn-primary">Search</button>
-
-<button class="btn btn-primary d-inline-block ml-2 float-right">Reset</button>
-        </div>
-    </div>
-</div>-->
            <br>
 
-           <table class=" table table-hover table-responsive"  >
+        
+
+           <table class="table table-hover table-responsive" style="width:100%">
 
             <thead>
-                <style>
-                table, th, td
-                {
-                    border: 1px solid black;
-                    border-collapse: collapse;
-                }
-                th,td{
-                    padding: 15px;
-                }
-           table {
-            border-collapse: collapse;
-            width: 100%;
-          }
-          th, td {
-            text-align: left;
-            padding: 15px;
-          }
-          tr:nth-child(even) {background-color: #C8C8C8;}
-        </style>
-            </td> <tr>
+            <table class="table table-bordered table-striped text-center">
+               
+        <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Price</th>
@@ -129,8 +86,8 @@
                 @endforeach
             </tbody>
 
-           </table>    
-                
+           </table>
+
 
 
     <!-- Optional JavaScript -->
