@@ -62,7 +62,8 @@ class DemoController extends Controller
         $vdetails->tel=$request['tel'];
         $vdetails->kms=$request['kms'];
         $vdetails->E=$request['E'];
-        $vdetails->item=$request['item'];
+        $checkbox_data=$request->input('item');
+        $vdetails->item=implode(',',$checkbox_data);
         $vdetails->regular=$request['regular'];
         $vdetails->front=$frontName;
         $vdetails->right=$rightName;
@@ -122,7 +123,8 @@ class DemoController extends Controller
         $vdetails->tel=$request['tel'];
         $vdetails->kms=$request['kms'];
         $vdetails->E=$request['E'];
-        $vdetails->item=$request['item'];
+        $checkbox_data=$request->input('item');
+        $vdetails->item=implode(',',$checkbox_data);
         $vdetails->regular=$request['regular'];
         if(isset($request->front)){
             $frontName=time().'.'.$request->front->extension();

@@ -79,7 +79,8 @@ class apicontroller extends Controller
         $vdetails->tel=$request['tel'];
         $vdetails->kms=$request['kms'];
         $vdetails->E=$request['E'];
-        $vdetails->item=$request['item'];
+        $checkbox_data=$request->input('item');
+        $vdetails->item=implode(',',$checkbox_data);
         $vdetails->regular=$request['regular'];
 
         if(isset($request->front)){

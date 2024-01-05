@@ -56,7 +56,8 @@
                 @csrf
 
                 <label for="name" class=""> First Name: </label>
-                <input type="text" id="name" name="name" class="float-right" style="width: 80%" @if($title=="Update Customer") value="{{ $vdetails->name }}" @endif >
+              
+                 <input type="text" name='name' class="float-right" style="width: 80%" @if($title=="Update Customer") value="{{ $vdetails->name }}" @endif > 
                 <br><spam class='text-danger'>
                   @error('name')
                   {{$message}}
@@ -64,7 +65,7 @@
                 </spam>
                 <br>
                 <label for="last" class=""> Last Name: </label>
-                <input type="text" id="name" name="last" class="float-right"  style="width: 80% "@if($title=="Update Customer") value="{{ $vdetails->last }}" @endif>
+                <input type="text" name="last" class="float-right"  style="width: 80% "@if($title=="Update Customer") value="{{ $vdetails->last }}"  @endif>
                 <br><spam class='text-danger'>
                   @error('last')
                   {{$message}}
@@ -178,7 +179,7 @@
                           </div>
                           <div class="form-check form-check-inline col-md-3">
                             <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Maths" name="item[]" @if($title=="Update Customer") {{ in_array('Maths',explode(',',$vdetails->item)) ?  'checked' : '' }} @endif>
-                            <label class="form-check-label" for="inlineCheckbox2">Maths(No field)</label>
+                            <label class="form-check-label" for="inlineCheckbox2">Mats(No field)</label>
                           </div>
 
                      </div>
@@ -222,7 +223,7 @@
 
                             </div>
                             <div class="form-inline col-md-4 ">
-                                <label for="exampleFormControlFile1">Right-Hand-Sied</label>
+                                <label for="exampleFormControlFile1">Right-Hand-Side</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="right">
                                 <spam class='text-danger'>
                                   @error("right")
@@ -231,7 +232,7 @@
                                 </spam>
                               </div>
                               <div class="form-inline col-md-4 ">
-                                <label for="exampleFormControlFile1">left-Hand-Sied</label>
+                                <label for="exampleFormControlFile1">left-Hand-Side</label>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1" name="left">
                                 <spam class='text-danger'>
                                   @error("left")
